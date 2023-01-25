@@ -1,5 +1,7 @@
 pipeline:
-    build:
-        image: gradle:7.4.2-jdk17-alpine
-        commands:
-        - ./gradlew clean
+  tests:
+    image: gradle:7.4.2-jdk17-alpine
+    commands:
+      - ./gradlew clean
+    when:
+      event: push
